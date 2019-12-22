@@ -43,7 +43,7 @@ export class BookComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result.favorite){     
+      if (result && result.favorite){     
         let favorites = JSON.parse(this.localStorageService.get('favorites'));
         favorites ? favorites.push(result.book) : favorites = [result.book];
         this.localStorageService.store('favorites', JSON.stringify(favorites));      

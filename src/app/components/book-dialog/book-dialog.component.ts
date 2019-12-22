@@ -26,7 +26,7 @@ export class BookDialogComponent {
   }
 
   addToFavorites(){
-    this.data.favorite = true;
+    this.data ? this.data.favorite = true : null;
   }
 
 }
